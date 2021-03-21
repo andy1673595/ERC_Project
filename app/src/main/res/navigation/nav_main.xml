@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_list"
+    android:id="@+id/nav_main">
+
+    <fragment
+        android:id="@+id/fragment_list"
+        android:name="com.example.erc_project.view.list.CollectionListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_collection_list">
+        <action
+            android:id="@+id/action_fragment_list_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_detail"
+        android:name="com.example.erc_project.view.detail.CollectionDetailFragment"
+        tools:layout="@layout/fragment_collection_detail">
+
+        <action
+            android:id="@+id/action_fragment_detail_to_fragment_list"
+            app:destination="@id/fragment_list" />
+        <action
+            android:id="@+id/action_fragment_detail_to_activity_web_view"
+            app:destination="@id/activity_web_view" />
+    </fragment>
+
+    <activity
+        android:id="@+id/activity_web_view"
+        android:name="com.example.erc_project.view.webView.WebViewActivity"
+        android:label="WebView">
+    </activity>
+</navigation>
